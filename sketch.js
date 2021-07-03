@@ -25,19 +25,23 @@ function setup() {
 function draw() {
   background(backgImg);
 
+  spacecraft.addImage(spacecraft1Img);
   if(!hasDocked){
     spacecraft.x = random(370,380);
     if(keyDown(LEFT_ARROW)){
-      spacecraft.x = spacecraft.x-10;
+      spacecraft.addImage(spacecraft3Img); 
+      spacecraft.x = spacecraft.x - 1;
     }
     if(keyDown(RIGHT_ARROW)){
-      spacecraft.x = spacecraft.x+10;
+      spacecraft.addImage(spacecraft4Img)
+      spacecraft.x = spacecraft.x+1;
     }
     if(keyDown(DOWN_ARROW)){
-      spacecraft.y = spacecraft.y+10;
+      spacecraft.addImage(spacecraft2Img)
+      spacecraft.y = spacecraft.y+1;
     }
     if(keyDown(UP_ARROW)){
-      spacecraft.y = spacecraft.y-10;
+      spacecraft.y = spacecraft.y-1;
     }
   }
   drawSprites();
